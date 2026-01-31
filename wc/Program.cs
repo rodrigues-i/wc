@@ -16,11 +16,16 @@ public class Program
 
         if(args.Count() == 2 && args[0] == "-c")
         {
-            bool fileExists = _argumentsValidator.FileExists(args[1]);
+            string filePath = args[1];
+            bool fileExists = _argumentsValidator.FileExists(filePath);
             if(!fileExists)
             {
                 Console.WriteLine($"Could not find file {args[1]}");
+                return;
             }
+
+            long bytes = new FileInfo(filePath).Length;
+            Console.WriteLine($"{bytes} {filePath}");
         }
     }
 }
