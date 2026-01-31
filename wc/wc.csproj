@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\wc.core\wc.core.csproj" />
+  </ItemGroup>
+
 </Project>
